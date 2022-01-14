@@ -12,18 +12,8 @@ const setup = (editor: Editor, url: string): void => {
         headingStyle: 'atx'
       })
       const markdown = turndownService.turndown(editor.getContent())
-      if ('markdown_dest' in editor.settings) {
-        const element = document.querySelector(editor.settings.markdown_dest);
-        if (element) {
-          element.innerText = markdown;
-        } else {
-          //default to alert
-          alert(markdown);
-        }
-      } else {
-        //print it in alert
-        alert(markdown);
-      }
+      
+      alert(markdown);
     }
   });
 };
